@@ -17,4 +17,10 @@
     font-size: 4vh;
     padding-left: 2vw;
     color: white;
+    flex: 1;
+}
+
+.rightButton {
+    font-size: 5vh;
+    color: white;
 }

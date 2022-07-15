@@ -4,6 +4,10 @@ import {useNavigate} from "react-router-dom";
 type Props = {
     text: string
     backButton?: boolean
+    rightButton?: {
+        icon: string,
+        callback: () => void
+    }
 }
 
 export default function TopBar(props: Props) {
@@ -23,5 +27,8 @@ export default function TopBar(props: Props) {
         <div className={styles.text}>
             {props.text}
         </div>
+        {
+            props.rightButton ? <div className={[styles.rightButton, 'material-icons'].join(' ')} onClick={props.rightButton.callback}>{props.rightButton.icon}</div> : <></>
+        }
     </div>
 }
