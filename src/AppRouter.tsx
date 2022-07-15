@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import LoginPage from "./components/login/LoginPage";
+import HomePage from "./components/home/HomePage";
 
 export default function AppRouter() {
 
@@ -16,10 +17,9 @@ export default function AppRouter() {
     return <Router>
         {
             <Routes>
-                {
-
-                }
-                <Route path="/login" element={<LoginPage/>} />
+                <Route path="/home" element={<HomePage/>}/>
+                <Route path="/login" element={<LoginPage/>}/>
+                <Route path="*" element={<Navigate to="/home"/>}/>
             </Routes>
         }
     </Router>
