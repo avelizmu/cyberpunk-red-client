@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 type Props = {
     text: string
-    backButton?: boolean
+    backButton?: boolean | string
     rightButton?: {
         icon: string,
         callback: () => void
@@ -18,7 +18,12 @@ export default function TopBar(props: Props) {
         {
             props.backButton ?
                 <div className={[styles.backArrow, 'material-icons'].join(' ')} onClick={() => {
-                    navigate(-1)
+                    if(typeof(props.backButton) === "string") {
+                        navigate(props.backButton)
+                    }
+                    else {
+                        navigate(-1)
+                    }
                 }}>
                     arrow_back_ios
                 </div> :
