@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+}
+
+.displayName {
+    flex: 1;
+    font-size: min(5vw, 5vh);
+}
+
+.numberContainer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.numberInput {
+    width: min(6vw, 6vh);
+    height: min(6vw, 6vh);
+    font-size: min(4vw, 4vh);
+    text-align: center;
+    border: 1px solid black;
+    padding: min(1vw, 1vw);
+}
+
+.symbol {
+    border: 1px solid black;
+    width: min(6vw, 6vh);
+    height: min(6vw, 6vh);
+    font-size: min(5vw, 5vh);
+    margin-left: min(2vw, 2vh);
+    margin-right: min(2vw, 2vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: min(1vw, 1vw);
+}
