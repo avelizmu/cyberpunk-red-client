@@ -1,0 +1,11 @@
+.container {
+    background: white;
+    width: min(80vw, 80vh);
+    padding: min(2vh, 2vw);
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: min(8vw, 8vh);
+}
