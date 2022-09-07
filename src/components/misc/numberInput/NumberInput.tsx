@@ -3,7 +3,9 @@ import {useState} from "react";
 
 type Props = {
     displayName: string,
-    startingValue: number
+    startingValue: number,
+    minValue?: number,
+    maxValue?: number
 }
 
 export default function NumberInput(props: Props) {
@@ -17,11 +19,11 @@ export default function NumberInput(props: Props) {
             }
         </div>
         <div className={styles.numberContainer}>
-            <div className={[styles.symbol, 'material-icons'].join(' ')} onClick={() => setValue(value + 1)}>
+            <div className={[styles.symbol, 'material-icons'].join(' ')} onClick={() => setValue(Math.min(value + 1, (props.maxValue || Number.POSITIVE_INFINITY)))}>
                 add
             </div>
-            <input value={value} className={styles.numberInput} onChange={(e) => setValue(parseInt(e.target.value))}/>
-            <div className={[styles.symbol, 'material-icons'].join(' ')} onClick={() => setValue(value - 1)}>
+            <input value={value} className={styles.numberInput} onChange={(e) => setValue(Math.max(Math.min(parseInt(e.target.value), (props.maxValue || Number.POSITIVE_INFINITY)), (props.minValue || Number.NEGATIVE_INFINITY)))}/>
+            <div className={[styles.symbol, 'material-icons'].join(' ')} onClick={() => setValue(Math.max(value - 1, (props.minValue || Number.NEGATIVE_INFINITY)))}>
                 remove
             </div>
         </div>
