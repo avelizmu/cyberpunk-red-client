@@ -25,6 +25,8 @@
 }
 
 .symbol {
+    cursor: pointer;
+    user-select: none;
     border: 1px solid black;
     width: min(6vw, 6vh);
     height: min(6vw, 6vh);
